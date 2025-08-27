@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace DOMINIO
 {
-    public class alumno
+    public class Materia
     {
-        //aca voy a ir metiendo los atributos
-        public int dni { get; set; }
+        public int id_materia {  get; set; }
         public string nombre { get; set; }
-        public string apellidio { get; set; }
-        public string cruso { get; set; }
-
+        public int dni_profesores { get; set; }
     }
 }
