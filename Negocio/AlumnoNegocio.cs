@@ -53,12 +53,16 @@ namespace Negocio
                 datos.setearParamtro("@NOMBRE_ALUMNO", nuevo.nombre);
                 datos.setearParamtro("@APELLIDO_ALUMNO", nuevo.apellido);
                 ///NO LE PUSE ESTADO TODAVIA AL ALUMNO, DESPUES LE ARMO UN ESTADO BOOL
-                datos.eje
+                datos.ejecutarAccion();
             }
             catch (Exception)
             {
 
                 throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
     }
