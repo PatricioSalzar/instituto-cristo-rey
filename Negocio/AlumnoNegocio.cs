@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Negocio
 {
-    internal class AlumnoNegocio
+    public class AlumnoNegocio
     {
         List<Alumno> lista()
         {
@@ -48,11 +48,11 @@ namespace Negocio
             try
             {
                 datos.setearConsulta("insert into Alumno (DNI_ALUMNO,NOMBRE_ALUMNO,APELLIDO_ALUMNO,ESTADO_ALUMNO) " +
-                                     "values (@DNI_ALUMNO,@NOMBRE_ALUMNO,@APELLIDO_ALUMNO");
+                                     "values (@DNI_ALUMNO,@NOMBRE_ALUMNO,@APELLIDO_ALUMNO,@ESTADO_ALUMNO");
                 datos.setearParamtro("@DNI_ALUMNO", nuevo.dni);
                 datos.setearParamtro("@NOMBRE_ALUMNO", nuevo.nombre);
                 datos.setearParamtro("@APELLIDO_ALUMNO", nuevo.apellido);
-                ///NO LE PUSE ESTADO TODAVIA AL ALUMNO, DESPUES LE ARMO UN ESTADO BOOL
+                datos.setearParamtro("@ESTADO_ALUMNO", nuevo.estado);
                 datos.ejecutarAccion();
             }
             catch (Exception)
@@ -63,6 +63,61 @@ namespace Negocio
             finally
             {
                 datos.cerrarConexion();
+            }
+        }
+
+        public void modificar(Alumno nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update Alumno set NOMBRE_ALUMNO = @nombre, APELLIDO_ALUMNO = @apellido, ESTADO_ALUMNO = @estado where DNI_ALUMNO = @dni");
+                datos.setearParamtro("@nombre", nuevo.nombre);
+                datos.setearParamtro("@apellido", nuevo.apellido);
+                datos.setearParamtro("@estado", nuevo.estado);
+                datos.setearParamtro("@dni", nuevo.dni);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void eliminar(int dni)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("delete from Alumno where DNI_ALUMNO = @dni");
+                datos.setearParamtro("dni", dni);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void bajaLogica(int dni)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("update Alumno set ESTADO_ALUMNO = 0 where DNI_ALUMNO = @dni");
+                datos.setearParamtro("@dni", dni);
+                datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }
