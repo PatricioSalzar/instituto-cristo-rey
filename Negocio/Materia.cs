@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DOMINIO
+namespace Negocio
 {
-    public class Cruso
+    public class Materia
     {
-        public int id_curso {  get; set; }
-        
-        public string nombre { get; set; }
     }
 }
