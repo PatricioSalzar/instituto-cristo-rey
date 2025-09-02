@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,8 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="AltaProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaProfesor.Designer.cs">
+      <DependentUpon>AltaProfesor.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlumnoNegocio.cs" />
     <Compile Include="CursoNegocio.cs" />
+    <Compile Include="ProfesorNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +60,11 @@
       <Project>{0c28f6d4-0da7-4d3f-badc-6345eba12854}</Project>
       <Name>DOMINIO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AltaProfesor.resx">
+      <DependentUpon>AltaProfesor.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
