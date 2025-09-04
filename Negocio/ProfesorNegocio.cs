@@ -65,6 +65,44 @@ namespace Negocio
         }
 
 
+        public void modificarProfesor(Profesor nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update Profesor set NOMBRE = @nombre, APELLIDO = @apellido, DNI = @dni");
+                datos.setearParamtro("@nombre", nuevo.nombre);
+                datos.setearParamtro("@apellido", nuevo.apellido);
+                datos.setearParamtro("@dni", nuevo.dni);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void eliminarProfesor(int dni)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("delete from Profesor where DNI = @dni");
+                datos.setearParamtro("dni", dni);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
 
     }
 }
