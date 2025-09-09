@@ -37,9 +37,9 @@
             this.modificarProfesorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaProfesorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarProfesorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.opciones = new System.Windows.Forms.Label();
             this.listarProfesoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarProfesorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opciones = new System.Windows.Forms.Label();
             this.OPC.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             this.altaProfesorToolStripMenuItem,
             this.modificarProfesorToolStripMenuItem});
             this.OPC.Name = "Profesor";
-            this.OPC.Size = new System.Drawing.Size(123, 48);
+            this.OPC.Size = new System.Drawing.Size(181, 70);
             // 
             // altaProfesorToolStripMenuItem
             // 
@@ -67,19 +67,20 @@
             this.altaAlumnoToolStripMenuItem,
             this.modificarAlumnoToolStripMenuItem});
             this.altaProfesorToolStripMenuItem.Name = "altaProfesorToolStripMenuItem";
-            this.altaProfesorToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.altaProfesorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.altaProfesorToolStripMenuItem.Text = "Alumnos";
             // 
             // altaAlumnoToolStripMenuItem
             // 
             this.altaAlumnoToolStripMenuItem.Name = "altaAlumnoToolStripMenuItem";
-            this.altaAlumnoToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.altaAlumnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.altaAlumnoToolStripMenuItem.Text = "Alta Alumno";
+            this.altaAlumnoToolStripMenuItem.Click += new System.EventHandler(this.altaAlumnoToolStripMenuItem_Click);
             // 
             // modificarAlumnoToolStripMenuItem
             // 
             this.modificarAlumnoToolStripMenuItem.Name = "modificarAlumnoToolStripMenuItem";
-            this.modificarAlumnoToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.modificarAlumnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarAlumnoToolStripMenuItem.Text = "Modificar Alumno";
             // 
             // modificarProfesorToolStripMenuItem
@@ -90,21 +91,33 @@
             this.listarProfesoresToolStripMenuItem,
             this.eliminarProfesorToolStripMenuItem});
             this.modificarProfesorToolStripMenuItem.Name = "modificarProfesorToolStripMenuItem";
-            this.modificarProfesorToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.modificarProfesorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarProfesorToolStripMenuItem.Text = "Profesor";
             // 
             // altaProfesorToolStripMenuItem1
             // 
             this.altaProfesorToolStripMenuItem1.Name = "altaProfesorToolStripMenuItem1";
-            this.altaProfesorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.altaProfesorToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.altaProfesorToolStripMenuItem1.Text = "Alta Profesor";
             this.altaProfesorToolStripMenuItem1.Click += new System.EventHandler(this.altaProfesorToolStripMenuItem1_Click);
             // 
             // modificarProfesorToolStripMenuItem1
             // 
             this.modificarProfesorToolStripMenuItem1.Name = "modificarProfesorToolStripMenuItem1";
-            this.modificarProfesorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.modificarProfesorToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.modificarProfesorToolStripMenuItem1.Text = "Modificar Profesor";
+            // 
+            // listarProfesoresToolStripMenuItem
+            // 
+            this.listarProfesoresToolStripMenuItem.Name = "listarProfesoresToolStripMenuItem";
+            this.listarProfesoresToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.listarProfesoresToolStripMenuItem.Text = "Listar Profesores";
+            // 
+            // eliminarProfesorToolStripMenuItem
+            // 
+            this.eliminarProfesorToolStripMenuItem.Name = "eliminarProfesorToolStripMenuItem";
+            this.eliminarProfesorToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.eliminarProfesorToolStripMenuItem.Text = "Eliminar Profesor";
             // 
             // opciones
             // 
@@ -116,18 +129,6 @@
             this.opciones.Size = new System.Drawing.Size(92, 24);
             this.opciones.TabIndex = 2;
             this.opciones.Text = "Opciones";
-            // 
-            // listarProfesoresToolStripMenuItem
-            // 
-            this.listarProfesoresToolStripMenuItem.Name = "listarProfesoresToolStripMenuItem";
-            this.listarProfesoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listarProfesoresToolStripMenuItem.Text = "Listar Profesores";
-            // 
-            // eliminarProfesorToolStripMenuItem
-            // 
-            this.eliminarProfesorToolStripMenuItem.Name = "eliminarProfesorToolStripMenuItem";
-            this.eliminarProfesorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eliminarProfesorToolStripMenuItem.Text = "Eliminar Profesor";
             // 
             // Form1
             // 
