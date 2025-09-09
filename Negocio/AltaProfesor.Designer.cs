@@ -104,6 +104,7 @@
             this.CancelarAltaProf.TabIndex = 7;
             this.CancelarAltaProf.Text = "Cancelar";
             this.CancelarAltaProf.UseVisualStyleBackColor = true;
+            this.CancelarAltaProf.Click += new System.EventHandler(this.CancelarAltaProf_Click);
             // 
             // AltaProfesor
             // 

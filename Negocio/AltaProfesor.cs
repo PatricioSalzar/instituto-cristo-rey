@@ -27,7 +27,7 @@ namespace Negocio
             try
             {
                 
-                nuevo.dni = int.Parse(textDNIprof.Text);
+                nuevo.dni = textDNIprof.Text;
                 nuevo.nombre = textNombreProf.Text;
                 nuevo.apellido = textApellidoProf.Text;
 
@@ -42,5 +42,10 @@ namespace Negocio
             }
         
     }
+
+        private void CancelarAltaProf_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

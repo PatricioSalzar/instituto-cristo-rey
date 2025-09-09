@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaAlumno.Designer.cs">
+      <DependentUpon>AltaAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AltaAlumno.resx">
+      <DependentUpon>AltaAlumno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,6 +89,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DOMINIO\DOMINIO.csproj">
+      <Project>{0C28F6D4-0DA7-4D3F-BADC-6345EBA12854}</Project>
+      <Name>DOMINIO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
       <Project>{C9ADE16F-A9CF-447B-BC67-541E5F86868C}</Project>
       <Name>Negocio</Name>

@@ -15,9 +15,9 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into Profesor (DNI,NOMBRE,APELLIDO) " +
-                                     "values (@DNI,@NOMBRE,@APELLIDO)");
-                datos.setearParamtro("@DNI", nuevo.dni);
+                datos.setearConsulta("insert into Profesor (DNI_PROFESOR,NOMBRE,APELLIDO) " +
+                                     "values (@DNI_PROFESOR,@NOMBRE,@APELLIDO)");
+                datos.setearParamtro("@DNI_PROFESOR", nuevo.dni);
                 datos.setearParamtro("@NOMBRE", nuevo.nombre);
                 datos.setearParamtro("@APELLIDO", nuevo.apellido);
                 
@@ -47,7 +47,7 @@ namespace Negocio
                 while (datos.Lector.Read())
                 {
                     Profesor aux = new Profesor();
-                    aux.dni = (int)datos.Lector["DNI"];
+                    aux.dni = (string)datos.Lector["DNI"];
                     aux.nombre = (string)datos.Lector["NOMBRE"];
                     aux.apellido = (string)datos.Lector["APELLIDO"];
                     lista.Add(aux);

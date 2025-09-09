@@ -19,8 +19,9 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=BD ICR; integrated security=true");
+            conexion = new SqlConnection("Server=.\\SQLEXPRESS;Database=DB_ICR;Integrated Security=True;");
             comando = new SqlCommand();
+
         }
 
         public void setearConsulta(string consulta)

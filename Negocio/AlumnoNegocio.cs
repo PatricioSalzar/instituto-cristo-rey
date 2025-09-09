@@ -27,7 +27,7 @@ namespace Negocio
                 while (lector.Read())//habria que ver que otros datos podemos mostrar sobre los alumnos /*DESPUES LO HABLAMOS*/
                 {
                     Alumno aux = new Alumno();
-                    aux.dni = (int)lector["DNI_ALUMNO"];
+                    aux.dni = (string)lector["DNI_ALUMNO"];
                     aux.nombre = (string)lector["NOMBRE_ALUMNO"];
                     aux.apellido = (string)lector["APELLIDO_ALUMNO"];
                     lista.Add(aux);
@@ -42,7 +42,7 @@ namespace Negocio
             }
         }
 
-        public void agrgar(Alumno nuevo)
+        public void agregarAlumno(Alumno nuevo)
         {
             AccesoDatos datos  = new AccesoDatos();
             try

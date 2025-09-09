@@ -25,5 +25,11 @@ namespace InstitutoCristoRey
             AltaProfesor formAlta = new AltaProfesor();
             formAlta.ShowDialog();
         }
+
+        private void altaAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AltaAlumno formAlta = new AltaAlumno();
+            formAlta.ShowDialog();
+        }
     }
 }
