@@ -110,8 +110,9 @@
             // listarProfesoresToolStripMenuItem
             // 
             this.listarProfesoresToolStripMenuItem.Name = "listarProfesoresToolStripMenuItem";
-            this.listarProfesoresToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.listarProfesoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listarProfesoresToolStripMenuItem.Text = "Listar Profesores";
+            this.listarProfesoresToolStripMenuItem.Click += new System.EventHandler(this.listarProfesoresToolStripMenuItem_Click);
             // 
             // eliminarProfesorToolStripMenuItem
             // 
