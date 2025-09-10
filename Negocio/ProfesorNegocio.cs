@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    internal class ProfesorNegocio
+    public class ProfesorNegocio
     {
         public void agregarProfesor(Profesor nuevo)
         {
@@ -100,6 +100,59 @@ namespace Negocio
             {
 
                 throw ex;
+            }
+        }
+
+        public List<Profesor> BuscarProfesores(string nombre, string apellido, string dni)
+        {
+            List<Profesor> lista = new List<Profesor>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                string consulta = "SELECT DNI_PROFESOR, NOMBRE, APELLIDO FROM Profesor WHERE 1=1";
+
+                if (!string.IsNullOrEmpty(nombre))
+                    consulta += " AND NOMBRE LIKE @NOMBRE";
+
+                if (!string.IsNullOrEmpty(apellido))
+                    consulta += " AND APELLIDO LIKE @APELLIDO";
+
+                if (!string.IsNullOrEmpty(dni))
+                    consulta += " AND DNI LIKE @DNI_PROFESOR";
+
+                datos.setearConsulta(consulta);
+
+                if (!string.IsNullOrEmpty(nombre))
+                    datos.setearParamtro("@NOMBRE", "%" + nombre + "%");
+
+                if (!string.IsNullOrEmpty(apellido))
+                    datos.setearParamtro("@APELLIDO", "%" + apellido + "%");
+
+                if (!string.IsNullOrEmpty(dni))
+                    datos.setearParamtro("@DNI_PROFESOR", "%" + dni + "%");
+
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Profesor prof = new Profesor();
+                    prof.dni = datos.Lector["DNI_PROFESOR"].ToString();
+                    prof.nombre = datos.Lector["NOMBRE"].ToString();
+                    prof.apellido = datos.Lector["APELLIDO"].ToString();
+
+                    lista.Add(prof);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
 

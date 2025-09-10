@@ -40,7 +40,7 @@ namespace InstitutoCristoRey
                 nuevo.dni = textDniAlum.Text;
                 nuevo.nombre = textNombreAlum.Text;
                 nuevo.apellido = textApellidoAlum.Text;
-                nuevo.estado = true;
+                //nuevo.estado = true;
                 //nuevo.anioIng = textAñoIngAlum.Text;
 
 
